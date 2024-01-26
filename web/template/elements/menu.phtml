@@ -1,0 +1,26 @@
+<div class="col-sm-2 sidenav">
+    <br>
+    <div class="input-group">
+        <input type="text" class="form-control" placeholder="Search...">
+        <span class="input-group-btn">
+            <a data-toggle="tooltip" title="Search" data-placement="right"  href="?action=search">
+                <button class="btn btn-default" type="button">
+                    <span class="glyphicon glyphicon-search"></span>
+                </button>
+            </a>
+        </span>
+    </div>
+    <br>
+    <ul class="nav nav-pills nav-stacked">
+        <li <?php if(!isset($_GET['action'])) echo 'class="active"'?> >
+            <a href="/"><span class="glyphicon glyphicon-home"></span> Home</a>
+        </li>
+        <li <?php if(isset($_GET['action']) && in_array($_GET['action'], ['list', 'delete'])) echo 'class="active"'?> >
+            <a href="?action=list"><span class="glyphicon glyphicon-user"></span> Contacts</a>
+        </li>
+        <li <?php if(isset($_GET['action']) && $_GET['action'] == 'add') echo 'class="active"'?> >
+            <a href="?action=add"><span class="glyphicon glyphicon-plus"></span> Add contact</a>
+        </li>
+    </ul>
+    <br>
+</div>

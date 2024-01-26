@@ -1,0 +1,15 @@
+<?php include_once('elements/head.phtml'); ?>
+
+<div class="container-fluid">
+    <div class="row content">
+        <?php include_once('elements/menu.phtml');?>
+
+        <div class="col-sm-10">
+            <h1><small>404</small></h1>
+            <hr>
+                Page "<?php echo $this->getPageLabel(); ?>"  not found
+        </div>
+    </div>
+</div>
+
+<?php include_once('elements/footer.phtml'); ?>

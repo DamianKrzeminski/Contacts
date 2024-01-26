@@ -1,0 +1,41 @@
+<?php
+/**
+ * @var $this Template
+ * @var $model ContactsModel
+ */
+$contactModel = $this->getModel('contacts');
+$contact = $contactModel->getOneById($this->getElementId());
+?>
+
+<?php include_once('elements/head.phtml'); ?>
+
+<div class="container-fluid">
+    <div class="row content">
+
+        <?php include_once('elements/menu.phtml');?>
+
+        <div class="col-sm-10">
+            <h1><small><?php echo $this->getPageLabel(); ?></small></h1>
+            <div class="up_button">
+                <a href="?action=edit&id=<?php echo $contact->getId(); ?>"
+                   data-toggle="tooltip" title="Edit" data-placement="left" >
+                    <button type="button" class="btn btn-primary">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                    </button>
+                </a>
+                <a href="?action=delete&id=<?php echo $contact->getId(); ?>"
+                   data-toggle="tooltip" title="Delete" data-placement="left" >
+                    <button type="button" class="btn btn-danger">
+                        <span class="glyphicon glyphicon-trash"></span>
+                    </button>
+                </a>
+            </div>
+            <hr>
+            <p>
+                <?php echo $contact; ?>
+            </p>
+        </div>
+    </div>
+</div>
+
+<?php include_once('elements/footer.phtml'); ?>
